@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Usage Guide &#8212; oss24 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="oss24 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="usage-guide">
+<h1>Usage Guide<a class="headerlink" href="#usage-guide" title="Link to this heading">¶</a></h1>
+<p>This guide explains the usage of the <cite>total_game</cite> class, including its key functions and features.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>The <cite>total_game</cite> class provides a suite of utility functions and mini-games, such as:</p>
+<ul class="simple">
+<li><p>Roulette game</p></li>
+<li><p>Guess the person game</p></li>
+<li><p>Pronunciation evaluation</p></li>
+<li><p>Group photo analyzer</p></li>
+<li><p>Receipt splitting calculator</p></li>
+</ul>
+<p>Each functionality is detailed below.</p>
+</section>
+<section id="roulette-game">
+<h2>Roulette Game<a class="headerlink" href="#roulette-game" title="Link to this heading">¶</a></h2>
+<p>The <cite>RouletteGame</cite> function runs a roulette game where users can spin the wheel and stop it to get a random result.</p>
+<p><strong>Function Signature</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RouletteGame</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><cite>values (list[str])</cite>: A list of strings to display on the roulette segments.</p></li>
+</ul>
+<p><strong>Description</strong>:</p>
+<ul class="simple">
+<li><p>Users click to spin the roulette and click again to stop it.</p></li>
+<li><p>The result is displayed in the console and visually below the roulette.</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">game</span> <span class="o">=</span> <span class="n">total_game</span><span class="p">()</span>
+<span class="n">game</span><span class="o">.</span><span class="n">RouletteGame</span><span class="p">([</span><span class="s2">&quot;Option1&quot;</span><span class="p">,</span> <span class="s2">&quot;Option2&quot;</span><span class="p">,</span> <span class="s2">&quot;Option3&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="guess-the-person-game">
+<h2>Guess the Person Game<a class="headerlink" href="#guess-the-person-game" title="Link to this heading">¶</a></h2>
+<p>The <cite>GuessPersonGame</cite> function presents a game where users guess the name of a person based on a displayed image.</p>
+<p><strong>Function Signature</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GuessPersonGame</span><span class="p">(</span><span class="n">images</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><cite>images (list[dict])</cite>: A list of dictionaries containing <cite>image</cite> (path) and <cite>answer</cite> (correct name).</p></li>
+</ul>
+<p><strong>Description</strong>:</p>
+<ul class="simple">
+<li><p>Users input their guesses into a text box.</p></li>
+<li><p>The game tracks the score and provides feedback after each guess.</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="s2">&quot;path_to_image1.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;Person1&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="s2">&quot;path_to_image2.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;Person2&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">total_game</span><span class="p">()</span>
+<span class="n">game</span><span class="o">.</span><span class="n">GuessPersonGame</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pronunciation-evaluation">
+<h2>Pronunciation Evaluation<a class="headerlink" href="#pronunciation-evaluation" title="Link to this heading">¶</a></h2>
+<p>The <cite>PronunciationApp</cite> function evaluates a user’s pronunciation by comparing spoken input with predefined sentences.</p>
+<p><strong>Function Signature</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PronunciationApp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><strong>Description</strong>:</p>
+<ul class="simple">
+<li><p>Users read aloud a randomly chosen sentence.</p></li>
+<li><p>The program analyzes the accuracy of the pronunciation and provides feedback.</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">game</span> <span class="o">=</span> <span class="n">total_game</span><span class="p">()</span>
+<span class="n">game</span><span class="o">.</span><span class="n">PronunciationApp</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="group-photo-analyzer">
+<h2>Group Photo Analyzer<a class="headerlink" href="#group-photo-analyzer" title="Link to this heading">¶</a></h2>
+<p>The <cite>GroupPhotoAnalyzerApp</cite> function analyzes a group photo for specific hand gestures or poses.</p>
+<p><strong>Function Signature</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GroupPhotoAnalyzerApp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><strong>Description</strong>:</p>
+<ul class="simple">
+<li><p>Users upload a group photo.</p></li>
+<li><p>The program detects features such as thumbs-up gestures or V poses.</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">game</span> <span class="o">=</span> <span class="n">total_game</span><span class="p">()</span>
+<span class="n">game</span><span class="o">.</span><span class="n">GroupPhotoAnalyzerApp</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="receipt-splitting-calculator">
+<h2>Receipt Splitting Calculator<a class="headerlink" href="#receipt-splitting-calculator" title="Link to this heading">¶</a></h2>
+<p>The <cite>Receipt</cite> function extracts total amounts from a receipt image and calculates the per-person cost.</p>
+<p><strong>Function Signature</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Receipt</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><strong>Description</strong>:</p>
+<ul class="simple">
+<li><p>Users upload a receipt image and input the number of people to split the cost.</p></li>
+<li><p>The program extracts the total amount from the receipt and calculates the split cost.</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">game</span> <span class="o">=</span> <span class="n">total_game</span><span class="p">()</span>
+<span class="n">game</span><span class="o">.</span><span class="n">Receipt</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="additional-notes">
+<h2>Additional Notes<a class="headerlink" href="#additional-notes" title="Link to this heading">¶</a></h2>
+<p>For more details on each function, refer to the inline comments in the source code or contact the development team.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">oss24</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roulette-game">Roulette Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guess-the-person-game">Guess the Person Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pronunciation-evaluation">Pronunciation Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#group-photo-analyzer">Group Photo Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receipt-splitting-calculator">Receipt Splitting Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-notes">Additional Notes</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">oss24 documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, aisl.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/usage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

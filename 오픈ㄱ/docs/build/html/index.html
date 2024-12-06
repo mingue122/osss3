@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>oss24 documentation &#8212; oss24 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage Guide" href="usage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="oss24-documentation">
+<h1>oss24 documentation<a class="headerlink" href="#oss24-documentation" title="Link to this heading">¶</a></h1>
+<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
+documentation for details.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#roulette-game">Roulette Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#guess-the-person-game">Guess the Person Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#pronunciation-evaluation">Pronunciation Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#group-photo-analyzer">Group Photo Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#receipt-splitting-calculator">Receipt Splitting Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#additional-notes">Additional Notes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="key-functions">
+<h1>Key Functions<a class="headerlink" href="#key-functions" title="Link to this heading">¶</a></h1>
+<section id="roulette-game">
+<h2>Roulette Game<a class="headerlink" href="#roulette-game" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="total_game.RouletteGame">
+<span class="sig-prename descclassname"><span class="pre">total_game.</span></span><span class="sig-name descname"><span class="pre">RouletteGame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#total_game.RouletteGame" title="Link to this definition">¶</a></dt>
+<dd><p>This function runs the roulette game where the user can click to spin the wheel and click again to stop it.</p>
+<p><strong>Parameters:</strong>
+- <cite>values (list[str])</cite>: A list of values to display on the roulette.</p>
+<p><strong>Raises:</strong>
+- <cite>ValueError</cite>: If the <cite>values</cite> list is empty.</p>
+<p><strong>Example:</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><p>game = total_game()
+game.RouletteGame([“Option1”, “Option2”, “Option3”])</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="guess-person-game">
+<h2>Guess Person Game<a class="headerlink" href="#guess-person-game" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="total_game.GuessPersonGame">
+<span class="sig-prename descclassname"><span class="pre">total_game.</span></span><span class="sig-name descname"><span class="pre">GuessPersonGame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#total_game.GuessPersonGame" title="Link to this definition">¶</a></dt>
+<dd><p>This function allows users to play a guessing game with random images and answers.</p>
+<p><strong>Parameters:</strong>
+- <cite>images (list[dict])</cite>: A list of dictionaries containing image paths and answers.</p>
+<p><strong>Example:</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><dl class="simple">
+<dt>images = [</dt><dd><p>{“image”: “person1.jpg”, “answer”: “Alice”},
+{“image”: “person2.jpg”, “answer”: “Bob”}</p>
+</dd>
+</dl>
+<p>]
+game.GuessPersonGame(images)</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="receipt-calculation">
+<h2>Receipt Calculation<a class="headerlink" href="#receipt-calculation" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="total_game.Receipt">
+<span class="sig-prename descclassname"><span class="pre">total_game.</span></span><span class="sig-name descname"><span class="pre">Receipt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#total_game.Receipt" title="Link to this definition">¶</a></dt>
+<dd><p>This function extracts the total amount from an image of a receipt and divides it among a given number of people.</p>
+<p><strong>Example:</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><p>game = total_game()
+game.Receipt()</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">oss24</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="usage.html" title="next chapter">Usage Guide</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, aisl.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
